@@ -1,0 +1,18 @@
+server:
+  port: 8082
+spring:
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+  dubbo:
+    application:
+      name: manage-web
+    registry:
+      address: ${DUBBO_ADDRESS:192.168.1.101:2181}
+      protocol: zookeeper
+    base-package: com.luka.gmall
+    protocol:
+      name: dubbo
+    consumer:
+      check: false
+      timeout: ${DUBBO_TIMEOUT:10000}

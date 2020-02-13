@@ -1,0 +1,21 @@
+server:
+  port: 8083
+logging:
+  level:
+    com.luka.gmall.manage.mapper : ${LOG_LEVEL:debug}
+spring:
+  dubbo:
+    application:
+      name: manage-service
+    registry:
+      address: ${DUBBO_ADDRESS:192.168.1.101:2181}
+      protocol: zookeeper
+    base-package: com.luka.gmall
+    protocol:
+      name: dubbo
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.1.101:3306/gmall?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
+      username: ${DATASOURCE_USERNAME:root}
+      password: ${DATASOURCE_PASSWORD:Luka52010!}
+      driver-class-name: com.mysql.jdbc.Driver
